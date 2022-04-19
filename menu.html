@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="menu.css">
+</head>
+  <body>
+
+    <div class="container">
+      <table style="width: 100%">
+        <tr style="margin: 0px; padding: 0px;">
+           <td style="margin: 0px; padding: 0px;">
+              <div class="logo"><small><small><small><span class="rainbow">Logo</span></small></small></small></div>
+            </td>
+            <td style="margin: 0px; padding: 0px;"><button class="button" style="margin: 0px;"><i class="material-icons">home</i><span style="margin: 0px;">Home </span></button>
+            </td>
+            <td style="margin: 0px; padding: 0px;"><button class="button" style="margin: 0px;"><i class="material-icons">call</i><span>About</span></button>
+            </td>
+            <td style="margin: 0px; padding: 0px;"><button class="button" id="menu1"><i class="material-icons" id="topii">menu</i><span id="topi">Topics </span></button>
+            </td>
+            <td style="margin: 0px; padding: 0px;"><button class="button"><i class="material-icons">bookmark_border</i><span>Bookmark</span></button>
+            </td>
+            <td style="padding: 0px;"><button class="button" onclick="signindown()"><i class="material-icons">account_circle</i><span>Sign In</span></button>
+            </td>
+        </tr>
+    </table>
+    <div style="padding: 0px; width: 100px; position: absolute; right: -30px; top: 7px;opacity: 0; z-index: -1">
+      <div class="profile"><img src="pic11.jpg" style="width: 50px; height: 50px; border-radius: 60%;">
+      </div>
+    </div>
+    </div>
+    <div class="drop" id="menulist1" style="position: absolute; width: 220px; top: -150px; left: 50%">
+      <table  style="font-family: Segoe UI">
+        <tr>
+          <td>Linked Lists</td>
+        </tr>
+        <tr>
+          <td>Stacks</td>
+        </tr>
+        <tr>
+          <td style="border: none;">Queues</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="drop" id="signin" style="position: absolute; width: 220px;height: 200px; top: -150px; right: 1%">
+      <form action="post" style="padding: 20px;position: relative;top: 30px">
+
+        <input type="text" name="uid" style="background-color: white;padding: 8px ; border-radius: 50px; width:90%;" placeholder="Username">
+        <input type="password" name="pwd" placeholder="Password" style="background-color: white;padding: 8px ; border-radius: 50px; width:90%; position: relative; top: 20px">
+        <input type="submit" value="Sign In" name="submit" style="position: relative; top: 40px; background-color: #2196F3; border-radius: 20px; border: none; width: 70px; padding: 5px; color: white"></form>
+        <button style="position: relative; top: 25px; left: 130px; border: none; border-radius: 20px; background-color: #2196F3; color: white; padding: 5px; width: 70px">Sign Up</button><button style="background-color: #303030; color: white; border: none; position: absolute; top: 165px; left:100px" onclick="signinup()">X</button>
+      </div>
+    </body>
+    
+    <script type="text/javascript">
+    var menu1=0;
+    falg=function()
+    {
+      var sp=document.querySelector("#FDetails");
+      sp.innerHTML="Algorithms are the most fundamental start to any computer science problem and it is crucial that students are taught and presented with an alogorithmic approach to any problem.";
+    }
+    fvis=function()
+    {
+      var sp=document.querySelector("#FDetails");
+      sp.innerHTML="Visualisations built by our content team to make explaning and understanding so much more intuitive. It is known that diagrams or generic visualisations increase the grasping power of learners.";
+    }
+    fcod=function()
+    {
+      var sp=document.querySelector("#FDetails");
+      sp.innerHTML="As would seem obvious to any computer science student, learning is incomplete without code implementation of the concepts learned. By providing code in multiple languages, we would like to make this page the go-to source for enhanced learning.";
+    }
+    fqui=function()
+    {
+      var sp=document.querySelector("#FDetails");
+      sp.innerHTML="Test your newly aquiredd knowledge in this quiz, crafted to test true learning- with a focus on application over memory.";
+    }
+    addmenu=function()
+    {
+      var e=document.querySelector("#menulist1");
+      e.style.top="65px";
+      var menuh=document.querySelector("#menu1");
+      menuh.style.backgroundColor="#37474F";
+    }
+    removemenu=function()
+    {
+      var e=document.querySelector("#menulist1");
+      e.style.top="-120px";
+      var menuh=document.querySelector("#menu1");
+      menuh.style.backgroundColor="#303030";
+    }
+    signindown=function()
+    {
+      var s=document.querySelector("#signin");
+      s.style.top="50px";
+    }
+    signinup=function()
+    {
+      var s=document.querySelector("#signin");
+      s.style.top="-150px";
+    }
+
+    var menuh=document.querySelector("#menu1");
+    menuh.addEventListener("mouseover",addmenu,false);
+    var menu=document.querySelector("#menulist1");
+    menu.addEventListener("mouseleave",removemenu,false);
+    var signin=document.querySelector("#signin");
+    signin.addEventListener("blur",signinup,false);
+    </script>
+  </body>
+</html>

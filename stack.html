@@ -1,0 +1,229 @@
+<html lang="en"> 
+
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="stack.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			#pushinp
+			{
+				width: 140px;
+			}
+			.operations
+			{	
+				position: relative;
+				display: inline-block;
+				background-color: #303030;
+				border-bottom: 6px solid #F57C00;
+				height: 40px;
+				width:160px;
+				text-align: center;
+				border-radius: 10px;
+			}
+			.operations1
+			{	
+				position: relative;
+				bottom: 5px;
+				display: inline-block;
+				background-color: #303030;
+				border-bottom: 6px solid #F57C00;
+				height: 40px;
+				width:160px;
+				text-align: center;
+				transition: transform 2s;	
+				border-radius: 10px;
+			}
+			.operations1:hover
+			{
+				opacity: 0.8;
+				transform: translateY(-90px);
+			}
+
+			.operations p
+			{
+				position: relative;
+				bottom: 7px;
+				font-size: 18px;
+			}
+
+			.m
+			{	
+				display: none;
+				height: 0px;
+				width: 160px;
+				background-color: #4DD0E1;
+				transition:2s;
+				position: relative;
+				bottom:3px;
+				border-radius: 10px;
+			}
+
+			.operations:hover 
+			{
+				opacity: 0.8;
+			}
+
+			.operations1:hover .m
+			{
+				display: block;
+				height: 100px;
+				background-color: #303030;
+			}
+
+			.cont
+			{
+				height: 550px;
+				width: 1000px;
+				position: fixed;
+				top: 100px;
+				left: 200px;
+				background-color: #303030
+			}
+			.el 
+			{
+				background-color: #4DD0E1;
+				width: 200px;
+				height: 100px;
+				margin: 10px;
+				border-radius: 6px;
+				position: absolute;
+				left: 100px; 
+				text-align: center;
+				//vertical-align: center;
+				transition: 0.4s ease-in-out;
+				animation: scaleto 2s ease;
+				animation-play-state:paused;
+			}	
+
+			@keyframes scaleto
+			{
+				0% {transform: scale(1,1)}
+				50% {transform: scale(1.5,1.5)}
+				100% {transform: scale(1,1)}
+			}
+		</style>
+
+	</head>
+	<body>
+		
+		<div  id="bottomnav" style="position: fixed; bottom: 10px; left: 350px; overflow: none">
+			<div class="operations1"><p style="color: white">PUSH</p><div class="m"><input type="text" name="n" id="pushinp" style="position: absolute; bottom: 30px; right:15px; left: 5px"></div></div>
+			<div class="operations" id="pop"><p style="color: white">POP</p></div>
+			<div class="operations" id="peek"><p style="color: white">PEEK</p></div>
+			<div class="operations" id="clear"><p style="color: white">CLEAR</p></div>
+		</div>
+		<div class="cont" style="color: white">
+			<pre style="font-size: 40px">       STACK</pre>
+		</div>
+	</div>
+	
+		<script type="text/javascript">
+			var node={}
+
+			countnode=0
+			pos=30
+			countpop=0
+			counttot=0
+			add=2000
+			node.add=function(event)
+			{
+				if(event.keyCode==13)
+				{
+					val=inp.value
+					inp.value=null//clears the text box
+					if(parseInt(val)==NaN)
+						inc=1
+					else
+						inc=4
+					if(countpop+countnode==4)
+					{
+						alert("Clear Screen and Try Again")
+					}
+					else if(countnode>=4)
+					{
+						alert("Try Deleting a Node")
+					}
+					else
+					{
+						countnode++
+						counttot++
+						x=document.createElement("div")
+						x.setAttribute("class","el")
+						x.innerHTML="<br><br>Element: "+val+"<br><br>Address: "+add;
+						add+=inc;
+						switch(countnode)
+						{
+							case 1:
+								x.style.bottom="30px"
+								break
+							case 2:
+								x.style.bottom="140px"
+								break
+							case 3:
+								x.style.bottom="250px"
+								break
+							case 4:
+								x.style.bottom="360px"
+								break;
+						}
+						dive=document.querySelector(".cont")
+						dive.appendChild(x)	
+					}
+				}	
+			}
+			
+			node.delete=function()
+			{
+				if(countnode==0)
+					alert("Stack is Empty! Try adding a node")
+				else
+				{	
+					
+					countpop++
+					dive=document.querySelector(".cont")
+					x=dive.children
+					x[counttot-countpop+1].style.left="500px"
+					x[counttot-countpop+1].style.bottom=pos+"px"
+					pos+=110
+					countnode--
+				}
+			}
+
+			node.clear= function()
+			{
+				dive=document.querySelector(".cont")
+				while(dive.firstChild)
+					dive.removeChild(dive.firstChild)
+				countnode=0
+				counttot=0
+				countpop=0
+				pos=0
+			}
+
+			node.enlarge=function()
+			{
+				if(countnode==0)
+					return;
+				dive=document.querySelector(".cont")
+				x=dive.children[countnode]
+				x.style.animationPlayState="running"				
+			}
+			
+			var del=document.querySelector("#pop")
+			del.addEventListener("click",node.delete,false)
+
+			var z=document.querySelector("#clear")
+			z.addEventListener("click",node.clear,false)
+			
+			var inp=document.querySelector("#pushinp")
+			inp.addEventListener("keypress",node.add,false)
+
+			var peek=document.querySelector("#peek")	
+			peek.addEventListener("click",node.enlarge,true)		
+
+			
+
+		</script>
+	</body>
+</html>

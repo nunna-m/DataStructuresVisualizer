@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Baloo Bhaina' rel='stylesheet'>
+    <style type="text/css">
+     
+    </style>
+  </head>
+  <body>
+    
+    <div>D</div>
+    <div>A</div>
+    <div>T</div>
+    <div>A</div>
+    <div>S</div>
+    <div>T</div>
+    <div>R</div>
+    <div>U</div>
+    <div>C</div>
+    <div>T</div>
+    <div>U</div>
+    <div>R</div>
+    <div>E</div>
+    <div>S</div>
+    <p></p>
+
+    <button style="position: absolute;left:500px; bottom: 10px;height: 40px;">DON'T HAVE AN ACCOUNT?</button> <button style="position: absolute; left: 700px; bottom: 10px;height: 40px;" >SIGN-IN</button>
+
+    <script type="text/javascript">
+      var obj={}
+      obj.move=function()
+      {
+        x[i].style.animationPlayState="running";
+        i++;
+        if(i==x.length)
+          clearInterval(obj.y)
+      }
+      x=document.querySelectorAll("div");
+      var i=0;
+      obj.y=setInterval(obj.move,200);
+      obj.move();
+      
+    </script>
+  </body>
+
+
+</html>

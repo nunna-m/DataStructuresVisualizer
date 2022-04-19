@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="signup.css">
+<style>
+.body{
+  margin:0px;
+  padding: 0px;
+  background-color: #03A9F4;
+  font-size: 24px;
+  font-family: courier;
+  color: white;
+}
+.container {
+  border-radius: 0px;
+  background-color: #303030;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  font-family: sans-serif;
+  font-weight: 100;
+  padding: 10px;
+  width: 97%; 
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 4px 8px -2px black;
+/*  box-shadow: 0 6px 12px 0 rgba(255, 255, 255, 0.25);*/
+}
+.container:hover{
+
+}
+.button {
+  
+  border-radius: 6px;
+  background-color:#303030;
+  /*linear-gradient(to bottom, #303030 0%, #37474F 90%);*/
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 100;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  transition: all 0.25s;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+}
+.button:hover{
+  background-color:#37474F;
+  color: #FFFFFF;
+  transition: 0.75s;
+  box-shadow: 0 2px 12px -4px black;
+/*  color: webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));*/
+/*  background-color: #546E7A;*/
+  background-color: radial-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 1))
+/*  box-shadow: 0 3px 6px 0 rgba(255, 255, 255, 0.25) inset;*/
+
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-weight: 100;
+  font-style: light;
+  font-size: 22px;
+  font-family: Segoe UI;
+  transition: 0.5s;
+  opacity:1;
+  padding-left: 15px;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+}
+
+.logo{
+    float: left;
+    float: top;
+    width: 0.7em;
+    font-size: 400%;
+    font-family: algerian, courier;
+    line-height: 30%;
+    color: #2196F3;
+
+}
+.logo:hover span{
+  font-style: bold;
+  font-style: bold; 
+  width: 0.7em;
+    font-family: algerian, courier;
+    line-height: 30%;
+}
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.button:hover span {
+  color: #2196F3;
+/*  padding-top: 20px;*/
+/*   height: 200px; */
+   opacity:1;
+}
+
+.sign{
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 50px;
+  background-color: #03A9F4;
+  font-size: 28px;
+  font-family: Segoe UI;
+  font-weight: 100;
+  color: white;
+  box-shadow: 0 4px 8px -2px black;
+}
+.sign:hover{
+  background-color: #039BE5;
+  box-shadow: 0 0px 16px -2px white;
+}
+
+table {
+    display:table; 
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 2px solid #37474F;
+    /*
+    border-left: 2px solid #37474F;
+    border-right: 2px solid #37474F;
+    */
+    margin: auto;
+}
+th {
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 0px solid #37474F;
+    /*
+    border-left: 2px solid #37474F;
+    border-right: 2px solid #37474F;
+    */
+    margin: 20px;
+}
+.container table, tr{
+  vertical-align: top;
+  border:0px solid white;
+}
+.container td, th
+{
+    padding: 00px;
+    vertical-align: top;
+    text-align: center;
+    width: 16%;
+    border-bottom: 0px solid #37474F;
+    /*
+    border-left: 2px solid #37474F;
+    border-right: 2px solid #37474F;
+    */
+    margin: 5px;
+}
+.profile
+{
+  width:50px;
+  height: 50px;
+  border-color: white;
+  border-radius: 50%;
+  border:3px solid;
+  background-color: grey;
+  transition: 0.5s;
+}
+.profile:hover
+{
+  box-shadow:0 0px 16px -2px black;
+  border-color: #2196F3;
+}
+.drop{
+  background-color: #303030;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  color: white;
+  box-shadow:0 0px 16px -2px black;
+  transition-duration: 0.5s;
+}
+.drop td,tr,th
+{
+  border-radius: 5px;
+}
+.drop td:hover,th:hover
+{
+  background-color: #37474F;
+  transition-duration: 0.25s;
+}
+</style>
+</head>
+<body bgcolor="#2196F3">
+
+
+
+
+<div class="container">
+<table style="width: 100%">
+  <tr style="margin: 0px; padding: 0px;">
+<td style="margin: 0px; padding: 0px;"><div class="logo"><small><small><small><span class="rainbow">Logo</span></small></small></small></div></td>
+<td style="margin: 0px; padding: 0px;"><button class="button" style="margin: 0px;"><i class="material-icons">home</i><span style="margin: 0px;">Home </span></button></td>
+<td style="margin: 0px; padding: 0px;"><button class="button" style="margin: 0px;"><i class="material-icons">call</i><span>About</span></button></td>
+<td style="margin: 0px; padding: 0px;"><button class="button" id="menu1"><i class="material-icons" id="topii">menu</i><span id="topi">Topics </span></button></td>
+<td style="margin: 0px; padding: 0px;"><button class="button"><i class="material-icons">bookmark_border</i><span>Bookmark</span></button></td>
+<td style="padding: 0px;"><button class="button" onclick="signindown()"><i class="material-icons">account_circle</i><span>Sign In</span></button></td>
+</tr>
+</table>
+<div style="padding: 0px; width: 100px; position: absolute; right: -30px; top: 7px;opacity: 0; z-index: -1"><div class="profile"><img src="pic11.jpg" style="width: 50px; height: 50px; border-radius: 60%;"></div></div>
+</div>
+<div class="drop" id="menulist1" style="position: absolute; width: 220px; top: -150px; left: 50%"><table  style="font-family: Segoe UI"><tr><td>Linked Lists</td></tr><tr><td>Stacks</td></tr><tr><td style="border: none;">Queues</td></tr></table></div>
+
+<div class="drop" id="signin" style="position: absolute; width: 220px;height: 200px; top: -150px; right: 1%"><form action="post" style="padding: 20px;position: relative;top: 30px"><input type="text" name="uid" style="background-color: white;padding: 8px ; border-radius: 50px; width:90%;" placeholder="Username"><input type="password" name="pwd" placeholder="Password" style="background-color: white;padding: 8px ; border-radius: 50px; width:90%; position: relative; top: 20px"><input type="submit" value="Sign In" name="submit" style="position: relative; top: 40px; background-color: #2196F3; border-radius: 20px; border: none; width: 70px; padding: 5px; color: white"></form><button style="position: relative; top: 25px; left: 130px; border: none; border-radius: 20px; background-color: #2196F3; color: white; padding: 5px; width: 70px">Sign Up</button><button style="background-color: #303030; color: white; border: none; position: absolute; top: 165px; left:100px" onclick="signinup()">X</button></div>
+<br>
+ 
+
+
+<div class="form">
+  <h1>Sign Up Now!</h1>
+  <form method="post" action="personal_page.php">
+      <div class="box"><span>1</span>Email &amp; Name</div>
+      <div class="innerbox">
+          <label>Email<input type="email" name="username" /></label>
+          <label>Name<input type="text" name="name"></textarea></label>
+      </div>
+
+      <div class="box"><span>2</span>Address &amp; Phone</div>
+      <div class="innerbox">
+          <label>Address <textarea name="addr"></textarea></label>
+          <label>Phone Number <input type="text" name="phone" /></label>
+      </div>
+
+      <div class="box"><span>3</span>Passwords</div>
+          <div class="innerbox">
+          <label>Password <input type="password" name="password" id="pwd"/></label>
+          <label>Confirm Password <input type="password" name="pwdcheck" id="pwd"/></label>
+      </div>
+      <div class="buttons">
+       <input type="submit" name="submitform" onclick="obj.checkpass()" />
+       <span class="privacy-policy">
+       <input type="checkbox" name="terms">Click to agree to terms and conditions 
+       </span>
+      </div>
+  </form>
+</div>
+</body>
+<script>
+      var menu1=0;
+      /*falg=function()
+      {
+        var sp=document.querySelector("#FDetails");
+        sp.innerHTML="Algorithms are the most fundamental start to any computer science problem and it is crucial that students are taught and presented with an alogorithmic approach to any problem.";
+      }
+      fvis=function()
+      {
+        var sp=document.querySelector("#FDetails");
+        sp.innerHTML="Visualisations built by our content team to make explaning and understanding so much more intuitive. It is known that diagrams or generic visualisations increase the grasping power of learners.";
+      }
+      fcod=function()
+      {
+        var sp=document.querySelector("#FDetails");
+        sp.innerHTML="As would seem obvious to any computer science student, learning is incomplete without code implementation of the concepts learned. By providing code in multiple languages, we would like to make this page the go-to source for enhanced learning.";
+      }
+      fqui=function()
+      {
+        var sp=document.querySelector("#FDetails");
+        sp.innerHTML="Test your newly aquiredd knowledge in this quiz, crafted to test true learning- with a focus on application over memory.";
+      }*/
+      addmenu=function()
+      {
+        var e=document.querySelector("#menulist1");
+        e.style.top="65px";
+        var menuh=document.querySelector("#menu1");
+        menuh.style.backgroundColor="#37474F";
+      }
+      removemenu=function()
+      {
+        var e=document.querySelector("#menulist1");
+        e.style.top="-120px";
+        var menuh=document.querySelector("#menu1");
+        menuh.style.backgroundColor="#303030";
+      }
+      signindown=function()
+      {
+        var s=document.querySelector("#signin");
+        s.style.top="50px";
+      }
+      signinup=function()
+      {
+        var s=document.querySelector("#signin");
+        s.style.top="-150px";
+      }
+      var menuh=document.querySelector("#menu1");
+      menuh.addEventListener("mouseover",addmenu,false);
+      var menu=document.querySelector("#menulist1");
+      menu.addEventListener("mouseleave",removemenu,false);
+      var signin=document.querySelector("#signin");
+      signin.addEventListener("blur",signinup,false);
+
+      var obj={};
+      obj.checkpass = function()
+      {
+        var checkpwd = document.querySelectorAll("#pwd");
+        var a=checkpwd[0].textContent;
+        //alert(a);
+        // var b=checkpwd[1].textContent;
+        // if(a==b)
+        // {
+        //   //return false;
+        //   continue;
+        // }
+        // else
+        // {
+        //   //return true;
+        //   event.stopPropagation();
+        // }
+      } 
+      
+
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<html> 
+
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="queue.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div  id="bottomnav" style="position: fixed; bottom: 10px; left: 350px; overflow: none">
+			<div class="operations1"><p style="color: white">ENQUEUE</p><div class="m"><input type="text" name="n" id="enq" style="position: absolute; bottom: 30px; right:15px; left: 5px"></div></div>
+			<div class="operations" id="deq"><p style="color: white">DEQUEUE</p></div>
+			<div class="operations" id="fro"><p style="color: white">FRONT</p></div>
+			<div class="operations" id="clear"><p style="color: white">CLEAR</p></div>
+		</div>
+			<div class="cont" style="color: white">
+				<pre style="font-size: 40px">       QUEUE</pre>
+			</div>
+
+		<script>
+			var node={}
+			var node={}
+
+			countnode=0
+			pos=30
+			orig=30
+			countpop=0
+			counttot=0
+			add=2000
+			node.delete = function()
+			{
+				if(countnode==0)
+					alert("Stack is Empty! Try adding a node")
+				else
+				{	
+					
+					countpop++
+					dive=document.querySelector(".cont")
+					x=dive.children
+					x[counttot-countnode+1].style.top="320px"
+					x[counttot-countnode+1].style.right=pos+"px"
+					
+					//orig+=120
+					pos+=110
+					countnode--
+				}
+			}
+			node.clear = function()
+			{
+				dive=document.querySelector(".cont")
+				
+				while(dive.firstChild)
+					dive.removeChild(dive.firstChild)
+				x=document.createElement("pre")
+				x.textContent="QUEUE"
+				x.setAttribute("style","font-size:40px")
+				dive.appendChild(x)
+
+				countnode=0
+				counttot=0
+				countpop=0
+				pos=0
+			}
+			node.add = function()
+			{
+				if(event.keyCode==13)
+				{
+					val=inp.value
+					inp.value=null//clears the text box
+					if(parseInt(val)==NaN)
+						inc=1
+					else
+						inc=4
+					if(countpop+countnode==4)
+					{
+						alert("Clear Screen and Try Again")
+					}
+					else if(countnode>=4)
+					{
+						alert("Try Deleting a Node")
+					}
+					else
+					{
+						countnode++
+						counttot++
+						x=document.createElement("div")
+						x.setAttribute("class","el")
+						x.innerHTML="<br><br>Element: "+val+"<br><br>Address: "+add;
+						add+=inc;
+						switch(countnode)
+						{
+							case 1:
+								x.style.right="10px"
+								break
+							case 2:
+								x.style.right="120px"
+								break
+							case 3:
+								x.style.right="230px"
+								break
+							case 4:
+								x.style.right="340px"
+								break;
+						}
+						dive=document.querySelector(".cont")
+						dive.appendChild(x)	
+					}
+				}	
+			}
+			node.enlarge = function()
+			{
+				if(countnode==0)
+					return;
+				dive=document.querySelector(".cont")
+				x=dive.children[countpop+1]
+				x.style.animationPlayState="running"
+			}
+			var del=document.querySelector("#deq")
+			del.addEventListener("click",node.delete,false)
+
+			var z=document.querySelector("#clear")
+			z.addEventListener("click",node.clear,false)
+			
+			var inp=document.querySelector("#enq")
+			inp.addEventListener("keypress",node.add,false)
+
+			var peek=document.querySelector("#fro")	
+			peek.addEventListener("click",node.enlarge,true)	
+		</script>
+	</body>

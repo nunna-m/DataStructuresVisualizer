@@ -1,0 +1,27 @@
+//linked list
+
+if($score>3)
+		$badge3=1;
+	else
+		$badge3=0;
+	$q1 = "insert into user_details (ll_sc,badge3) values ('$score','$badge3') where username='$_SESSION['username']'";
+	$rec = mysqli_query($conn,$q1);
+
+
+//queue
+
+if($score>3)
+		$badge2=1;
+	else
+		$badge2=0;
+	$q1 = "insert into user_details (q_sc,badge2) values ('$score','$badge2') where username='$_SESSION['username']'";
+	$rec = mysqli_query($conn,$q1);
+
+
+//stack
+if($score>3)
+		$badge1=1;
+	else
+		$badge1=0;
+	$q1 = "insert into user_details (st_sc,badge1) values ('$score','$badge1') where username='$_SESSION['username']'";
+	$rec = mysqli_query($conn,$q1);

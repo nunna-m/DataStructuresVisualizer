@@ -1,0 +1,83 @@
+p
+{
+ background-color: blue;
+  border-radius: 10px;
+  border:2px solid black;
+  height:20px;
+  width:20px;
+  position:absolute;
+  top:225px;
+  left:90px;
+  animation-name: travel;
+  animation-duration: 3.7s;
+  animation-timing-function: linear;
+  animation-direction: forwards;
+}
+
+@keyframes travel
+{
+  from {left:85px;}
+  to {left:1200px;}
+}
+
+div
+{
+  position: absolute;
+  top:200px;
+  left: 100px;
+  animation-name: flip;
+  animation-duration: 0.8s;
+  animation-timing-function: forwards;
+  animation-play-state: paused;
+
+}
+
+@keyframes flip
+{
+  0% {top:190px;}
+  5% {top:185px;}
+  10% {top:180px}
+  15% {top:175px;}
+  20% {top:170px;}
+  25% {top:165px;}
+  30%{top:160px;}
+  35%{top:155px;}
+  40%{top:150px;}
+  45%{top:145px;}
+  50%{top:140px;}
+  55%{top:145px;}
+  60%{top:150px;}
+  65%{top:155px;}
+  70%{top:160px;}
+  75%{top:165px;}
+  80%{top:170px;}
+  85%{top:175px;}
+  90%{top:180px;}
+  95%{top:185px;}
+  100%{top:200px;}
+
+
+}
+
+div
+{
+  display: inline-block;
+  position: relative;
+  top:200px;
+  left: 100px;
+
+}
+
+body
+{
+  background-color: black;
+  font-family: "Baloo Bhaina";
+  font-size:100px;
+  color: #02cde0;
+}
+
+button
+{
+  background-color: #02cde0;
+  border-radius:10px;
+}
